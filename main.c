@@ -29,3 +29,9 @@ int compare_by_height(const void *a, const void *b) {
     if (person_a->height > person_b->height) return 1;
     return 0;
 }
+// Función para imprimir el arreglo de personas
+void print_people(Person people[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("Name: %s, Age: %d, Height: %.2f cm\n", people[i].name, people[i].age, people[i].height);
+    }
+}
