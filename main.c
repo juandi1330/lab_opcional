@@ -60,3 +60,20 @@ int main() {
         printf("Altura (en cm): ");
         scanf("%lf", &people[i].height);
     }
+// Ordenar por nombre
+    printf("\nOrdenado por nombre:\n");
+    qsort(people, n, sizeof(Person), compare_by_name);
+    print_people(people, n);
+
+    // Ordenar por edad
+    printf("\nOrdenado por edad:\n");
+    qsort(people, n, sizeof(Person), compare_by_age);
+    print_people(people, n);
+
+    // Ordenar por altura
+    printf("\nOrdenado por altura:\n");
+    qsort(people, n, sizeof(Person), compare_by_height);
+    print_people(people, n);
+
+    return 0;
+}
