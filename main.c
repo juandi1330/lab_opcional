@@ -35,3 +35,28 @@ void print_people(Person people[], int n) {
         printf("Name: %s, Age: %d, Height: %.2f cm\n", people[i].name, people[i].age, people[i].height);
     }
 }
+int main() {
+    int n;
+
+    // Solicitar al usuario la cantidad de personas
+    printf("Ingrese el número de personas: ");
+    scanf("%d", &n);
+    
+    // Creación del arreglo de personas
+    Person people[n];
+    
+    // Ingreso de datos para cada persona
+    for (int i = 0; i < n; i++) {
+        printf("\nPersona %d:\n", i + 1);
+        printf("Nombre: ");
+        getchar();  // Para limpiar el buffer del Enter previo
+        fgets(people[i].name, sizeof(people[i].name), stdin);
+        // Eliminar el salto de línea al final del nombre si lo hay
+        people[i].name[strcspn(people[i].name, "\n")] = 0;
+
+        printf("Edad: ");
+        scanf("%d", &people[i].age);
+
+        printf("Altura (en cm): ");
+        scanf("%lf", &people[i].height);
+    }
