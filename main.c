@@ -9,3 +9,23 @@ typedef struct {
     double height;
 } Person;
 
+// Funciones de comparación para qsort
+int compare_by_name(const void *a, const void *b) {
+    Person *person_a = (Person *)a;
+    Person *person_b = (Person *)b;
+    return strcmp(person_a->name, person_b->name);
+}
+
+int compare_by_age(const void *a, const void *b) {
+    Person *person_a = (Person *)a;
+    Person *person_b = (Person *)b;
+    return person_a->age - person_b->age;
+}
+
+int compare_by_height(const void *a, const void *b) {
+    Person *person_a = (Person *)a;
+    Person *person_b = (Person *)b;
+    if (person_a->height < person_b->height) return -1;
+    if (person_a->height > person_b->height) return 1;
+    return 0;
+}
